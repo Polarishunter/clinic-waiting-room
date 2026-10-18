@@ -1,5 +1,5 @@
 const PREFIX='clinic-pages-original-'+self.registration.scope;
-const CACHE=PREFIX+'-v1';
+const CACHE=PREFIX+'-v2';
 const local=path=>new URL(path,self.registration.scope).href;
 const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/apple-touch-icon.png','./icons/favicon-32.png'].map(local);
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
